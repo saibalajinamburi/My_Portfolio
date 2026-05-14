@@ -724,7 +724,7 @@ body.theme-switching * {
 .cta-button {
     display: inline-block;
     padding: 1.3rem 3.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), #667eea, var(--secondary-color));
     color: #fff;
 
     text-decoration: none;
