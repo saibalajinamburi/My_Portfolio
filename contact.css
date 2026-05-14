@@ -314,6 +314,7 @@
 .chip-github::before   { background: #e6e6e6; }
 .chip-email::before    { background: #ea580c; }
 .chip-app::before      { background: #10b981; }
+.chip-whatsapp::before { background: #25D366; }
 
 [data-theme="light"] .contact-chip {
     background: rgba(255, 255, 255, 0.92);
@@ -342,6 +343,7 @@
 .chip-github .chip-icon    { background: rgba(255, 255, 255, 0.07); color: #d0d0d0; }
 .chip-email .chip-icon     { background: rgba(234, 88, 12, 0.12);  color: #ea580c; }
 .chip-app .chip-icon       { background: rgba(16, 185, 129, 0.12); color: #10b981; }
+.chip-whatsapp .chip-icon  { background: rgba(37, 211, 102, 0.12); color: #25D366; }
 
 [data-theme="light"] .chip-github .chip-icon { background: rgba(0,0,0,0.05); color: #24292e; }
 
