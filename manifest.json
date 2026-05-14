@@ -1,0 +1,24 @@
+{
+    "name": "Namburi Saibalaji - Portfolio",
+    "short_name": "Saibalaji",
+    "description": "Computer Vision & Robotics AI Engineer Portfolio",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0b0f19",
+    "theme_color": "#f59e0b",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

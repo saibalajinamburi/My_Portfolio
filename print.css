@@ -1,0 +1,112 @@
+@media print {
+
+    /* Hide non-essential elements */
+    .navbar,
+    .theme-toggle,
+    .blob,
+    .geometric-shapes,
+    .noise-overlay,
+    .particles,
+    .gradient-mesh,
+    .background-animation,
+    .back-to-top,
+    .orbit-container,
+    .projects-filter,
+    .projects-search,
+    .proj-arrow,
+    .pagination-info,
+    .loading-screen {
+        display: none !important;
+    }
+
+    /* Reset colors for print */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    /* Page structure */
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        page-break-after: avoid;
+        font-size: 18pt;
+        margin-top: 20px;
+        border-bottom: 2px solid #000;
+    }
+
+    h3 {
+        page-break-after: avoid;
+        font-size: 14pt;
+        margin-top: 15px;
+    }
+
+    /* Links */
+    a {
+        text-decoration: underline;
+        color: #000 !important;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        font-style: italic;
+    }
+
+    /* Hide link URLs for nav */
+    .nav-links a[href]:after {
+        content: "";
+    }
+
+    /* Skills */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    /* Projects */
+    .projects-grid {
+        display: block;
+    }
+
+    .project-card {
+        border: 1px solid #000 !important;
+        margin-bottom: 15px;
+        padding: 10px;
+        page-break-inside: avoid;
+    }
+
+    .project-image {
+        display: none;
+    }
+
+    /* Contact */
+    .contact-card-wrapper {
+        border: 1px solid #000 !important;
+        padding: 15px;
+    }
+
+    .availability-badge,
+    .contact-cta-group,
+    .contact-methods {
+        display: none;
+    }
+
+    /* Footer */
+    .footer {
+        border-top: 1px solid #000;
+        padding: 10px 0;
+        text-align: center;
+    }
+}

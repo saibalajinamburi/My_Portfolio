@@ -1,0 +1,422 @@
+/* ============================================================
+   CONTACT SECTION — Premium Redesign v2
+   ============================================================ */
+
+#contact {
+    padding: 6rem 5% 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient background orbs */
+#contact::before,
+#contact::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#contact::before {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.16), transparent 70%);
+    top: -80px;
+    right: -80px;
+}
+
+#contact::after {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.14), transparent 70%);
+    bottom: -40px;
+    left: -60px;
+}
+
+/* ── Main card ─────────────────────────────────────────────── */
+.contact-card-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1020px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.contact-card-wrapper:hover {
+    border-color: rgba(245, 158, 11, 0.28);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.35), 0 0 60px rgba(245, 158, 11, 0.05);
+}
+
+[data-theme="light"] .contact-card-wrapper {
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(217, 119, 6, 0.18);
+    box-shadow: 0 20px 60px rgba(217, 119, 6, 0.1), 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Animated gradient top stripe */
+.contact-card-wrapper::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, #f59e0b, #667eea, #ec4899, #f59e0b);
+    background-size: 300% 100%;
+    animation: stripe-shift 6s linear infinite;
+}
+
+@keyframes stripe-shift {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
+
+/* ── Split-panel grid ──────────────────────────────────────── */
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+}
+
+.contact-divider {
+    background: linear-gradient(180deg,
+        transparent 5%,
+        rgba(245, 158, 11, 0.18) 30%,
+        rgba(102, 126, 234, 0.18) 70%,
+        transparent 95%);
+    margin: 0;
+    align-self: stretch;
+}
+
+/* ── Left Panel ────────────────────────────────────────────── */
+.contact-left {
+    padding: 2.8rem 3rem 2.8rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+/* Availability badge */
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.1rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.06));
+    border: 1px solid rgba(16, 185, 129, 0.32);
+    border-radius: 999px;
+    color: #10b981;
+    font-size: 0.82rem;
+    font-weight: 700;
+    width: fit-content;
+    letter-spacing: 0.4px;
+}
+
+.availability-badge::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    animation: dot-pulse 1.8s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes dot-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* Headline */
+.contact-headline {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.contact-headline .highlight {
+    background: linear-gradient(135deg, #f59e0b 30%, #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Subtitle */
+.contact-subtitle {
+    font-size: 0.97rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Location */
+.contact-location {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+}
+
+.contact-location i {
+    color: var(--primary-color);
+}
+
+.contact-location .separator {
+    opacity: 0.35;
+    margin: 0 0.15rem;
+}
+
+/* CTA buttons */
+.contact-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.3rem;
+}
+
+.contact-primary-cta,
+.contact-secondary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.93rem;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-primary-cta {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #000;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.28);
+    border: none;
+}
+
+.contact-primary-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.42);
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+.contact-primary-cta::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-primary-cta:hover::after { left: 100%; }
+
+.contact-secondary-cta {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1.5px solid rgba(245, 158, 11, 0.32);
+}
+
+.contact-secondary-cta:hover {
+    background: rgba(245, 158, 11, 0.07);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.14);
+}
+
+.contact-microcopy {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.5;
+    margin-top: auto;
+}
+
+/* ── Right Panel ────────────────────────────────────────────── */
+.contact-right {
+    padding: 2.8rem 3.2rem 2.8rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-right-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: var(--text-muted);
+    margin: 0 0 1.2rem 0;
+}
+
+/* Social link cards - simplified: icon + name + arrow */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+}
+
+.contact-chip {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.95rem 1.2rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    flex: 1;
+}
+
+.contact-chip:first-child { border-radius: 12px 12px 0 0; }
+.contact-chip:last-child  { border-radius: 0 0 12px 12px; border-bottom: none; }
+
+.contact-chip:hover {
+    background: rgba(245, 158, 11, 0.07);
+    padding-left: 1.6rem;
+}
+
+/* Left accent bar */
+.contact-chip::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    border-radius: 3px 0 0 3px;
+    transform: scaleY(0);
+    transition: transform 0.2s ease;
+    transform-origin: bottom;
+}
+
+.contact-chip:hover::before { transform: scaleY(1); }
+
+/* Platform accent colors */
+.chip-linkedin::before { background: #0a66c2; }
+.chip-xing::before     { background: #006567; }
+.chip-github::before   { background: #e6e6e6; }
+.chip-email::before    { background: #ea580c; }
+.chip-app::before      { background: #10b981; }
+
+[data-theme="light"] .contact-chip {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(217, 119, 6, 0.08);
+}
+
+[data-theme="light"] .contact-chip:hover {
+    background: rgba(245, 158, 11, 0.05);
+}
+
+/* Icon - bigger to fill even vertical space */
+.chip-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.chip-linkedin .chip-icon  { background: rgba(10, 102, 194, 0.13); color: #0a66c2; }
+.chip-xing .chip-icon      { background: rgba(0, 101, 103, 0.13);  color: #006567; }
+.chip-github .chip-icon    { background: rgba(255, 255, 255, 0.07); color: #d0d0d0; }
+.chip-email .chip-icon     { background: rgba(234, 88, 12, 0.12);  color: #ea580c; }
+.chip-app .chip-icon       { background: rgba(16, 185, 129, 0.12); color: #10b981; }
+
+[data-theme="light"] .chip-github .chip-icon { background: rgba(0,0,0,0.05); color: #24292e; }
+
+/* chip-name is now a direct child (no chip-text wrapper) */
+.chip-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-color);
+    flex: 1;
+}
+
+/* Arrow */
+.chip-arrow {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.22s ease;
+    flex-shrink: 0;
+}
+
+.contact-chip:hover .chip-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--primary-color);
+}
+
+/* Footer note */
+.contact-preference {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(245, 158, 11, 0.08);
+    font-style: italic;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .contact-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.18), transparent);
+        margin: 0 2rem;
+    }
+
+    .contact-left {
+        padding: 2.5rem 2rem 2rem;
+    }
+
+    .contact-right {
+        padding: 2rem 2rem 2.5rem;
+    }
+
+    .contact-methods {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .contact-chip:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 540px) {
+    #contact { padding: 4rem 4% 4rem; }
+
+    .contact-left,
+    .contact-right { padding: 2rem 1.5rem; }
+
+    .contact-headline { font-size: 1.7rem; }
+    .contact-methods { grid-template-columns: 1fr; }
+}
