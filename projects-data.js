@@ -7,6 +7,7 @@ const projectsData = [
         category: "ml genai",           // Uses LLMs (Gemma) + ML — classifies as BOTH
         type: "End-to-End MLOps System",
         role: "MLOps & AI Engineer",
+        image: "assets/projects/supportpulse.png",
         flagship: true,
         cardColor: "blue",
         techStack: [
@@ -45,6 +46,7 @@ const projectsData = [
         category: "ml",              // CV model + full-stack mobile — purely ML
         type: "Full-stack AI Health Application",
         role: "Lead Developer",
+        image: "assets/projects/dentalsolutions.png",
         flagship: false,
         cardColor: "peach",
         techStack: [
@@ -78,6 +80,7 @@ const projectsData = [
         category: "ml",              // NLP + MLOps — classical ML / fine-tuning
         type: "NLP & MLOps Pipeline",
         role: "ML Engineer",
+        image: "assets/projects/researchiq.png",
         cardColor: "purple",
         techStack: [
             { name: "Python", icon: "fab fa-python", color: "#3776AB" },
@@ -111,6 +114,7 @@ const projectsData = [
         category: "ml",              // Financial ML — no LLMs, purely ML
         type: "Financial AI System",
         role: "AI Systems Engineer",
+        image: "assets/projects/market_intelligence.png",
         cardColor: "amber",
         techStack: [
             { name: "Python", icon: "fab fa-python", color: "#3776AB" },
@@ -142,6 +146,7 @@ const projectsData = [
         category: "ml",              // LightGBM + HF embeddings — ML pipeline
         type: "Automated ML Pipeline",
         role: "ML Developer",
+        image: "assets/projects/paper_classifier.png",
         cardColor: "teal",
         techStack: [
             { name: "Python", icon: "fab fa-python", color: "#3776AB" },

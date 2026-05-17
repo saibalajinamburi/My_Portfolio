@@ -126,13 +126,25 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
 
-        card.innerHTML = `
+        let imageAreaHTML = '';
+        if (project.image) {
+            imageAreaHTML = `
+            <div class="card-image-area" style="padding: 0;">
+                ${flagshipBadge}
+                <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover; max-width: none; max-height: none;" />
+            </div>`;
+        } else {
+            imageAreaHTML = `
             <div class="card-image-area" style="background: ${bgGradient}">
                 ${flagshipBadge}
                 <div class="card-icon-placeholder">
                     <i class="${iconClass}"></i>
                 </div>
-            </div>
+            </div>`;
+        }
+
+        card.innerHTML = `
+            ${imageAreaHTML}
 
             <div class="card-body">
                 <h3 class="card-title">${project.title}</h3>
@@ -280,16 +292,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const iconClass = icons[index % icons.length];
         const bgGradient = cardColors[project.cardColor] || cardColors.peach;
 
+        let modalImageAreaHTML = '';
+        if (project.image) {
+            modalImageAreaHTML = `
+            <div class="card-image-area" style="padding: 0;">
+                <img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover; max-width: none; max-height: none;" />
+            </div>`;
+        } else {
+            modalImageAreaHTML = `
+            <div class="card-image-area" style="background: ${bgGradient}">
+                <div class="card-icon-placeholder">
+                    <i class="${iconClass}"></i>
+                </div>
+            </div>`;
+        }
+
         modalCard.innerHTML = `
             <button class="modal-close-btn" title="Close">
                 <i class="fas fa-times"></i>
             </button>
             
-            <div class="card-image-area" style="background: ${bgGradient}">
-                <div class="card-icon-placeholder">
-                    <i class="${iconClass}"></i>
-                </div>
-            </div>
+            ${modalImageAreaHTML}
 
             <div class="card-body">
                 <h3 class="card-title">${project.title}</h3>
